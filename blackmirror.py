@@ -26,5 +26,5 @@ def choose():
 	save_txt.write(' {}'.format(sonuc))
 	save_txt.close()
 
-choose()
+choose() 
 
