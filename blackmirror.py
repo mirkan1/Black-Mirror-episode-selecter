@@ -1,30 +1,30 @@
-import random
+from random import randint
 
-def choose():
-	sezon = random.randint(1,4)
+def episode_selecter():
+	season = randint(1,4)
 	read_txt = open('black-mirror.txt', 'r')
 
-	if sezon == 1 or sezon == 2:
-		bolum = random.randint(1,3)
-	elif sezon == 3:
-		bolum = random.randint(0,6)
-	elif sezon == 4:
-		bolum = random.randint(1,6)
+	if season == 1 or season == 2:
+		episode = randint(1,3)
+	elif season == 3:
+		episode = randint(0,6)
+	elif season == 4:
+		episode = randint(1,6)
 
-	sonuc = 'S{}B{}'.format(sezon, bolum)
+	selected_episode = 'S{}E{}'.format(season, episode)
 		
 	split = read_txt.read().split()		
 	for i in split:
-		if i == sonuc:
+		if i == selected_episode:
 			read_txt.close()
-			print('varolan secildi')
-			return choose()
+			print('Selected watched episode...')
+			return episode_selecter()
 
 	read_txt.close()
-	print(sonuc)
+	print(selected_episode)
 	save_txt = open('black-mirror.txt', 'a')
-	save_txt.write(' {}'.format(sonuc))
+	save_txt.write(' {}'.format(selected_episode))
 	save_txt.close()
 
-choose() 
+episode_selecter() 
 
