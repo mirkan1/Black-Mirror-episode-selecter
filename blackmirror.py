@@ -29,7 +29,7 @@ def episode_selecter():
 	selected_episode = 'S{}E{}'.format(season, episode)
 
 	split_read_txt = read_txt.read().split()
-	try:	
+	try:
 		for i in split_read_txt:
 			if i == selected_episode:
 				read_txt.close()
@@ -45,8 +45,6 @@ def episode_selecter():
 
 	except RecursionError:
 		episode_show.config(text="No episode left to watch")
-
-	
 
 win = Tk()
 win.title('Black Mirror random episode selecter')
