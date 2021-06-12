@@ -16,15 +16,16 @@ def last_episode():
 
 def episode_selecter():
 	global episode_show
-	season = randint(1,4)
+	season = randint(1,5)
 	read_txt = open('black-mirror.txt', 'r')
 
-	if season == 1 or season == 2:
+	if season == 1 or season == 2 or season == 5:
 		episode = randint(1,3)
 	elif season == 3:
 		episode = randint(0,6)
 	elif season == 4:
 		episode = randint(1,6)
+
 
 	selected_episode = 'S{}E{}'.format(season, episode)
 
